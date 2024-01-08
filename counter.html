@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: peru;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            color: azure;
+
+        }
+
+        #counter {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(212, 129, 129);
+            box-shadow: 5px 5px rgb(246, 69, 69);
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3cm;
+        }
+
+        .button input {
+            size: 50px;
+            color: peru;
+        }
+
+        .btn input[type='button'] {
+            width: 90px;
+            padding: 2px;
+            margin: 2px 0px;
+            position: relative;
+            left: 13px;
+            top: 20px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.5s;
+            background-color: #8aa39e;
+            border-radius: 6px;
+            color: white;
+        }
+
+        .btn input[type='button']:hover {
+            background-color: rgb(197, 135, 135);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="counter">
+        <p>0</p>
+        <p></p>
+        <div id="btn">
+
+            <button onclick="incr()">+</button>
+            <button onclick="decr()">-</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        //counter.js
+        const para = document.getElementsByTagName('p')
+        let count = 0;
+        function incr() {
+            if (count < 25) {
+                count++
+                para[0].textContent = count
+                para[1].textContent = "incremented"
+            }
+            else {
+                alert("excedding age please check your Age!!!")
+            }
+        }
+        function decr() {
+            if (count > 0) {
+                count--
+                para[0].textContent = count
+                para[1].textContent = "decremented"
+            }
+            else {
+                alert("less than 0 is not eligible ")
+            }
+
+        }
+        function reset() {
+            count = 18;
+            para[0].textContent = count
+            para[1].textContent = ""
+        }
+
+    </script>
+</body>
+
+</html>

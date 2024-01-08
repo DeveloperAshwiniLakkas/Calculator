@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-Changer</title>
+    <style>
+        .main {
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            box-shadow: 5cm;
+        }
+
+        .dark {
+            background-color: rgb(12, 13, 13);
+            color: rgb(237, 226, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsum inventore ducimus natus
+            ipsam
+            saepe corrupti iure, laborum libero ratione, temporibus sunt molestias quis possimus ipsa beatae sit
+            blanditiis aperiam voluptatum facilis deleniti tempora in tempore. Tempora voluptates commodi optio
+            dolore
+            nesciunt dicta quod inventore neque, quo magni ex sit temporibus ipsam. Animi, architecto omnis tempora
+            recusandae molestiae nesciunt dolor libero ducimus cumque, optio magnam impedit, qui deserunt nostrum et
+            officia sunt ea provident. Quia et molestiae consectetur quae, doloremque dolor eum laudantium fuga.
+            Tenetur
+            soluta, nulla, provident ratione possimus animi consectetur doloremque explicabo blanditiis officiis
+            tempore
+            ipsum quam tempora.
+            <div class="button">
+                <button id="btn" onclick="change()">Click Me</button>
+                <button id="btn" onclick="change2()"> Change ColourUsinghexadecimal</button>
+                <button id="btn" onclick="changeMode()">toggle Change Theme</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const button = document.getElementById('btn')
+        function change() {
+            const arr = ["red", "pink", "orange", "magenda", "purple", "Aqua", "black", "brown", "yellow"]
+            document.body.style.backgroundColor = arr[Math.ceil(Math.random() * 10)]
+        }
+        function change2() {
+            const hexcode = "#" + Math.round(Math.random() * 100000).toString(16)
+            document.body.style.backgroundColor = hexcode
+        }
+        function changeMode() {
+            var element = document.body;
+            element.classList.toggle("dark");
+            //var body = document.body;
+            //document.body.classlist.toggle('dark')
+        }
+    </script>
+</body>
+
+</html>
